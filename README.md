@@ -43,30 +43,34 @@ npm run dev
 
 To fetch any api call, just apoint the url for http://localhost:8080
 
-### POST /pizzas
+### POST /polls
 
 Request Body:
 ```bash
 {
-  name: string;
-  price: number;
-  ingredients: string[];
+  title: string;
+  options: string[];
 }
 ```
 
-### GET /pizzas
+### GET /polls/:pollId
 
-### POST /orders
+### POST /polls/:pollId/votes
 
 Request body:
 ```bash
 {
-  pizzaId: string;
-  quantity: number;
+  pollOptionId: string;
 }
 ```
 
-### GET /orders
+### WS /polls/:pollId/results
 
-### GET /orders/:id
+Message:
+```bash
+{
+  pollOptionId: string;
+  votes: number;
+}
+```
 
